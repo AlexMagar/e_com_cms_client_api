@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import adminRouter from "./src/routers/adminRouter.js";
 
 const PORT = process.env.PORT || 8000
 
@@ -11,7 +12,7 @@ app.use(cors())
 app.use(morgan('dev'))
 
 //apis
-app.use("api/v1/admin", adminRouter)
+app.use("/api/v1/admin", adminRouter)
 
 // default route
 app.get("/", (req, res) =>{
