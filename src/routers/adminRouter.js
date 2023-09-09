@@ -14,14 +14,14 @@ const users = [
 
 
 //get the admin
-router.get("/",  (req, res, next) =>{
+router.get("/", async (req, res, next) =>{
     try {
-    const result = getAdmins()
+    const result = await getAdmins()
 
     console.log("List all the admins: ", result)
 
         res.json({
-            status: "sucess",
+            status: "success",
             message: "here is the user Info",
             result
         })
