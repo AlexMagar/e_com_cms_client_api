@@ -2,10 +2,17 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import adminRouter from "./src/routers/adminRouter.js";
+import mongoConnect from "./src/config/mongoConfig.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const PORT = process.env.PORT || 8000
 
 const app = express();
+
+
+mongoConnect(); //db connect
 
 app.use(express.json())
 app.use(cors())
