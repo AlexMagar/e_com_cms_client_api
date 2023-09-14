@@ -12,7 +12,6 @@ const users = [
     }
 ]
 
-
 //get the admin
 router.get("/", async (req, res, next) =>{
     try {
