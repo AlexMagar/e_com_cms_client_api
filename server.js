@@ -20,7 +20,7 @@ app.use(morgan('dev'))
 
 //apis
 app.use("/api/v1/admin", adminRouter)
-app.use("/api/v1/product", productRouter)
+// app.use("/api/v1/product", productRouter)
 
 // default route
 app.get("/", (req, res) =>{

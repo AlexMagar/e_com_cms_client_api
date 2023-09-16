@@ -4,5 +4,5 @@ import mongoose from "mongoose";
 const admin = mongoose.model("admins", {})
 
 export const getAdmins = () =>{
-    return admin.findOne()
+    return admin.find()
 }
