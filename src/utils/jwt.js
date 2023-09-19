@@ -1,11 +1,13 @@
-
+import jwt from 'jsonwebtoken'
+import { updateAdmin } from '../modles/admin/AdminModel.js'
+import { insertSession } from '../modles/session/SessionModel.js'
 
 export const createAccessJWT = async (email) =>{
     const token = jwt.sign({email}, process.env.JWT_ACCESS_SECRET, {
         expiresIn: "15m"
     })
     console.log("JWT createAccessToken", token)
-    await insertSesstion({token, associate: email})
+    await insertSession({token, associate: email})
 
     return token
 }
