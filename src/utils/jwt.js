@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { updateAdmin } from '../modles/admin/AdminModel.js'
+import {updateAdmin} from '../modles/admin/AdminModel.js'
 import { insertSession } from '../modles/session/SessionModel.js'
 
 export const createAccessJWT = async (email) =>{
