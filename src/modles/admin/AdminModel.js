@@ -6,3 +6,7 @@ const admin = mongoose.model("admins", {})
 export const getAdmins = () =>{
     return admin.find()
 }
+
+export const updateAdmin = () => {
+    return "update Admin"
+}
