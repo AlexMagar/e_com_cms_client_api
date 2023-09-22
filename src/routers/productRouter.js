@@ -1,11 +1,17 @@
 import express from 'express'
+import { getProductById, getProducts } from '../modles/product/ProductModel.js';
 
 const router = express.Router()
 
 router.get("/:_id?", async (req, res, next) =>{
     try {
         const { _id} = req.params;
-        const products = _id ? await getProductById(_id) : await getProducts(); 
+        console.log("Product router id: ",_id)
+        const products = _id ? await getProductById(_id) : await getProducts()
+
+        const pdt = await getProducts()
+
+        console.log("product router: ", pdt)
 
         res.json({
             status: "success",
@@ -17,3 +23,5 @@ router.get("/:_id?", async (req, res, next) =>{
         next(next)
     }
 })
+
+export default router
