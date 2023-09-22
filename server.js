@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import adminRouter from "./src/routers/adminRouter.js";
 import mongoConnect from "./src/config/mongoConfig.js";
+import productRouter from './src/routers/productRouter.js'
 import dotenv from "dotenv";
 
 dotenv.config();
