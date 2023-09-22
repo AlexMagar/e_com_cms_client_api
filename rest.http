@@ -1,7 +1,11 @@
 @rootAPI = http://localhost:8000/api/v1
 
+
 # ====== admin api =======
 
 ###get Admin
 GET {{rootAPI}}/admin
 
+# ========== product api =======
+###get product
+GET  {{rootAPI}}/product
