@@ -11,7 +11,7 @@ router.get("/:_id?", async (req, res, next) =>{
 
         const pdt = await getProducts()
 
-        console.log("product router: ", pdt)
+        // console.log("product router: ", pdt)
 
         res.json({
             status: "success",
