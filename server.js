@@ -4,6 +4,7 @@ import morgan from "morgan";
 import adminRouter from "./src/routers/adminRouter.js";
 import mongoConnect from "./src/config/mongoConfig.js";
 import productRouter from './src/routers/productRouter.js'
+import paymentRouter from "./src/routers/paymentRouter.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(morgan('dev'))
 //apis
 app.use("/api/v1/admin", adminRouter)
 app.use("/api/v1/product", productRouter)
+app.use("/api/v1/payment", paymentRouter)
 
 // default route
 app.get("/", (req, res) =>{
