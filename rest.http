@@ -9,3 +9,8 @@ GET {{rootAPI}}/admin
 # ========== product api =======
 ###get product
 GET  {{rootAPI}}/product
+
+
+# ============ payment =============
+### get payment
+GET {{rootAPI}}/payment
