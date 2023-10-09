@@ -8,7 +8,7 @@ router.get("/", async (rea, res) => {
 })
 
 //payment method listen 
-router.post("/create-payment-intent", async (req, res) => {
+router.post("/payment", async (req, res) => {
     //use string sdk to process
     const secret = process.env.PAYMENT_SECRET_KEY
 
