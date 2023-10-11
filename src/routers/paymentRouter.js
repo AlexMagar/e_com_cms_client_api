@@ -3,8 +3,25 @@ import Stripe from "stripe";
 
 const router = express.Router()
 
-router.get("/", async (rea, res) => {
-    console.log("get payment here")
+const paymentDetail= [{
+    "amount": "240",
+    "currency": "AUD",
+    "paymentMethodType": "card",
+}]
+
+router.get("/", async (req, res) => {
+    try {
+        
+        const {amount, currency, paymentMethodType} = await req.body
+        console.log("This is amount: ",amount)
+        res.json({
+            status:"success",
+            message: "Here are the payment detail of the transaction",
+            paymentDetail,
+        })
+    } catch (error) {
+        next(error)
+    }
 })
 
 //payment method listen 
@@ -20,6 +37,8 @@ router.post("/payment", async (req, res) => {
         currency,
         payment_method_types: [paymentMethodType]
     })
+
+    console.log("This is payment POST method: ",amount, currency)
 
     //return secret key
     return res.json({
