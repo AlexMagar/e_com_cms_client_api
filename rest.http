@@ -12,5 +12,15 @@ GET  {{rootAPI}}/product
 
 
 # ============ payment =============
-### get payment
+### get method
 GET {{rootAPI}}/payment
+
+### POST payment
+POST {{rootAPI}}/payment
+Content-Type: application/json
+
+{
+    "amount": "240",
+    "currency": "AUD",
+    "paymentMethodType": "Card"
+}
